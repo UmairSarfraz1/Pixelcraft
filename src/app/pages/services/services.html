@@ -1,0 +1,33 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">A good idea takes a good team</span>
+    <h1>All the right pieces, <span class="accent">working together.</span></h1>
+    <p>From the first big question to the final little detail, we bring the right mix of creative and technical thinking.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="service-list">
+      @for (service of data.services; track service.title; let index = $index) {
+        <article class="card service-detail">
+          <div class="service-detail-icon">{{ service.icon }}</div>
+          <span class="service-number">0{{ index + 1 }}</span>
+          <div class="service-detail-copy">
+            <h2>{{ service.title }}</h2>
+            <p>{{ service.description }}</p>
+            <span class="service-note">Made for real people, built to make a difference.</span>
+          </div>
+          <a class="detail-arrow" routerLink="/contact" [attr.aria-label]="'Ask us about ' + service.title">↗</a>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="services-cta">
+  <div class="container services-cta-inner">
+    <div><span class="eyebrow">Have something in mind?</span><h2>Let’s find the right way forward.</h2></div>
+    <a class="button" routerLink="/contact">Talk to our team <span aria-hidden="true">↗</span></a>
+  </div>
+</section>

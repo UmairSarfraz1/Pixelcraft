@@ -1,0 +1,39 @@
+.not-found {
+  display: grid;
+  min-height: 65vh;
+  align-items: center;
+  padding: 70px 0;
+  background: radial-gradient(circle at 50% 35%, #f1edff 0, #fff 58%);
+  text-align: center;
+}
+
+.not-found-content {
+  display: grid;
+  justify-items: center;
+}
+
+.error-code {
+  color: #e8e2ff;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: clamp(7rem, 22vw, 13rem);
+  font-weight: 800;
+  letter-spacing: -0.1em;
+  line-height: 0.9;
+}
+
+.not-found .eyebrow {
+  margin-top: 24px;
+}
+
+.not-found h1 {
+  margin: 15px 0 10px;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+}
+
+.not-found p {
+  max-width: 480px;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}

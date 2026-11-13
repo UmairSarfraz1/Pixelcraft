@@ -1,0 +1,67 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">The people behind the pixels</span>
+    <h1>Good work starts with <span class="accent">good people.</span></h1>
+    <p>We’re a small, independent creative studio bringing a little more thought and a lot more heart to the digital world.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about-intro">
+    <div class="about-photo">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1100&q=85" alt="Bright shared creative studio workspace" />
+      <span class="photo-note">A good place to make good things.</span>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">Our story</span>
+      <h2>Small by choice.<br /><span class="accent">Big on collaboration.</span></h2>
+      <p>PixelCraft Studio began with a simple belief: the best digital work happens when people feel heard. We bring strategy, design, and technology together to make experiences that are useful, memorable, and unmistakably yours.</p>
+      <p>We keep our team intentionally close, so the people you meet at kickoff are the same people shaping your work all the way through launch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container values-grid">
+    <article class="value-card">
+      <span class="value-number">01</span>
+      <span class="eyebrow">Our mission</span>
+      <h2>Make thoughtful ideas impossible to ignore.</h2>
+      <p>We help ambitious, good-hearted teams turn their ideas into clear, beautiful experiences that make a difference.</p>
+    </article>
+    <article class="value-card value-highlight">
+      <span class="value-number">02</span>
+      <span class="eyebrow">Our vision</span>
+      <h2>A digital world made with more care.</h2>
+      <p>We imagine a creative industry where listening comes first, good work is shared, and every detail has a reason to be there.</p>
+    </article>
+  </div>
+</section>
+
+<section class="stats-band">
+  <div class="container stats-grid">
+    <div><strong>8+</strong><span>years creating</span></div>
+    <div><strong>42</strong><span>happy partnerships</span></div>
+    <div><strong>16</strong><span>creative awards</span></div>
+    <div><strong>100%</strong><span>independently owned</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Our little team</span>
+      <h2>Nice to <span class="accent">meet you.</span></h2>
+      <p>Different minds, shared values, and a very full group chat.</p>
+    </div>
+    <div class="team-grid">
+      @for (person of data.team; track person.name) {
+        <article class="team-card">
+          <div class="team-image"><img [src]="person.image" [alt]="person.name" /></div>
+          <h3>{{ person.name }}</h3>
+          <p>{{ person.role }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,103 @@
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy fade-up">
+      <span class="eyebrow">Independent creative studio</span>
+      <h1>We make digital feel a little more <span class="accent">human.</span></h1>
+      <p>PixelCraft Studio builds thoughtful brands and digital experiences for people with good ideas and big plans.</p>
+      <div class="hero-actions">
+        <a class="button" routerLink="/contact">Start a project <span aria-hidden="true">↗</span></a>
+        <a class="button button-light" routerLink="/portfolio">Explore our work</a>
+      </div>
+      <div class="hero-note"><span class="online-dot"></span> Small studio, big-hearted ideas</div>
+    </div>
+    <div class="hero-art" aria-label="A colorful creative workspace">
+      <div class="art-orbit orbit-one"></div>
+      <div class="art-orbit orbit-two"></div>
+      <div class="art-card art-card-main">
+        <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=85" alt="Sunlit creative studio with plants" />
+      </div>
+      <div class="art-sticker">Good<br />things<br /><span>take shape.</span></div>
+      <div class="art-caption"><span class="caption-dot"></span> Strategy meets a little imagination</div>
+    </div>
+  </div>
+</section>
+
+<section class="intro section">
+  <div class="container intro-grid">
+    <div class="intro-title">
+      <span class="eyebrow">A little about us</span>
+      <h2>Small team.<br /><span class="accent">Thoughtful work.</span></h2>
+    </div>
+    <div class="intro-copy">
+      <p>We’re a close-knit team of designers, makers, and problem-solvers. We partner with people who care about what they put into the world—and help them make it matter online.</p>
+      <a class="text-link" routerLink="/about">Get to know us <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">What we do</span>
+      <h2>From first sketch to <span class="accent">launch day.</span></h2>
+      <p>Everything you need to bring your next good idea to life, all under one roof.</p>
+    </div>
+    <div class="service-grid">
+      @for (service of data.services; track service.title) {
+        <article class="card service-card">
+          <span class="service-icon" aria-hidden="true">{{ service.icon }}</span>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </article>
+      }
+    </div>
+    <a class="text-link service-link" routerLink="/services">See all our services <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading portfolio-heading">
+      <div>
+        <span class="eyebrow">A few favorites</span>
+        <h2>Made with <span class="accent">good people.</span></h2>
+      </div>
+      <a class="text-link" routerLink="/portfolio">View all projects <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="project-grid">
+      @for (project of data.projects.slice(0, 3); track project.title) {
+        <a class="project-card" routerLink="/portfolio">
+          <div class="project-image" [style.background]="project.color">
+            <img [src]="project.image" [alt]="project.title + ' project preview'" />
+          </div>
+          <div class="project-meta"><div><h3>{{ project.title }}</h3><span>{{ project.description }}</span></div><span class="project-category">{{ project.category }}</span></div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section testimonial-section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Kind words</span>
+      <h2>Better work, <span class="accent">together.</span></h2>
+    </div>
+    <div class="testimonial-grid">
+      @for (testimonial of data.testimonials; track testimonial.name) {
+        <article class="card testimonial-card">
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <p>“{{ testimonial.quote }}”</p>
+          <div class="testimonial-person"><span class="person-avatar">{{ testimonial.name.charAt(0) }}</span><div><strong>{{ testimonial.name }}</strong><span>{{ testimonial.role }}</span></div></div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="closing-cta">
+  <div class="container closing-inner">
+    <div><span class="eyebrow">Your next chapter</span><h2>Have a good idea?<br />We’d love to hear it.</h2></div>
+    <a class="button button-light" routerLink="/contact">Tell us about it <span aria-hidden="true">↗</span></a>
+  </div>
+</section>

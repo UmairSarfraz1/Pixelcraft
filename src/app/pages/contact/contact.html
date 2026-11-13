@@ -1,0 +1,70 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Good things start with hello</span>
+    <h1>Tell us what you’re <span class="accent">thinking.</span></h1>
+    <p>A new website, a big idea, or just a question—we’re all ears.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-layout">
+    <div class="contact-copy">
+      <span class="eyebrow">Let’s make something good</span>
+      <h2>Tell us a little about your project.</h2>
+      <p>Share as much or as little as you like. This demo form stays right here in your browser and doesn’t send or store your information.</p>
+      <div class="contact-note">
+        <span class="note-icon" aria-hidden="true">✦</span>
+        <div><strong>No pressure, ever.</strong><span>Just a friendly first conversation.</span></div>
+      </div>
+      <div class="contact-note">
+        <span class="note-icon" aria-hidden="true">↗</span>
+        <div><strong>Small, senior team.</strong><span>You’ll talk directly with the makers.</span></div>
+      </div>
+    </div>
+
+    <form class="contact-form card" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+      @if (submitted) {
+        <div class="success-message" role="status">
+          <span aria-hidden="true">✓</span>
+          <div><strong>Thanks for saying hello!</strong><p>Your message was received in this demo. Nothing was sent or saved.</p></div>
+        </div>
+      }
+
+      <div class="field-row">
+        <div class="form-field">
+          <label for="name">Your name <span aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" placeholder="Alex Morgan" required [(ngModel)]="name" #nameField="ngModel" />
+          @if (nameField.invalid && (nameField.touched || contactForm.submitted)) {
+            <span class="field-error">Please enter your name.</span>
+          }
+        </div>
+        <div class="form-field">
+          <label for="email">Email address <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" placeholder="alex@example.com" required email [(ngModel)]="email" #emailField="ngModel" />
+          @if (emailField.invalid && (emailField.touched || contactForm.submitted)) {
+            <span class="field-error">Please enter a valid email address.</span>
+          }
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="subject">What’s this about? <span aria-hidden="true">*</span></label>
+        <input id="subject" name="subject" type="text" placeholder="A new website, a fresh brand..." required [(ngModel)]="subject" #subjectField="ngModel" />
+        @if (subjectField.invalid && (subjectField.touched || contactForm.submitted)) {
+          <span class="field-error">Please add a subject.</span>
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="message">A little more about it <span aria-hidden="true">*</span></label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us what you’re working on..." required minlength="10" [(ngModel)]="message" #messageField="ngModel"></textarea>
+        @if (messageField.invalid && (messageField.touched || contactForm.submitted)) {
+          <span class="field-error">Please write at least 10 characters.</span>
+        }
+      </div>
+
+      <button class="button submit-button" type="submit">Send your note <span aria-hidden="true">↗</span></button>
+      <p class="form-disclaimer">Demo only — your details are not sent anywhere.</p>
+    </form>
+  </div>
+</section>
